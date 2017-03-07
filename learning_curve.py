@@ -26,10 +26,19 @@ def train_model():
 
     # train models with training percentages between 5 and 90 (see
     # train_percentages) and evaluate the resultant accuracy for each.
-    # You should repeat each training percentage num_trials times to smooth out
-    # variability.
-    # For consistency with the previous example use
-    # model = LogisticRegression(C=10**-10) for your learner
+    for i, p in enumerate(train_percentages):
+        # You should repeat each training percentage num_trials times to smooth
+        # out variability.
+        for t in range(num_trials):
+            # Split test data inton train_size percentage/100
+            X_train, X_test, y_train, y_test = train_test_split(data.data,
+                                                                data.target,
+                                                                train_size=p/100)
+            # For consistency with the previous example use
+            # model = LogisticRegression(C=10**-10) for your learner
+            model = LogisticRegression(C=10**-10)
+            model.fit(X_train, y_train)
+            test_accuracies[i] = model.score(X_test, y_test)
 
     # TODO: your code here
 
@@ -43,4 +52,4 @@ def train_model():
 if __name__ == "__main__":
     # Feel free to comment/uncomment as needed
     display_digits()
-    # train_model()
+    train_model()
