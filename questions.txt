@@ -12,4 +12,4 @@ the curve gets smoother around 100 trial but doesn't get much smoother with
 increased trials after that
 
 4. What happens when you change the C value?
-The accuracy increases faster when the C value is smaller
+The accuracy increases faster when the C value is larger
