@@ -20,7 +20,7 @@ def display_digits():
 
 def train_model():
     data = load_digits()
-    num_trials = 10
+    num_trials = 20
     train_percentages = range(5, 95, 5)
     test_accuracies = numpy.zeros(len(train_percentages))
 
@@ -36,7 +36,7 @@ def train_model():
                                                                 train_size=p/100)
             # For consistency with the previous example use
             # model = LogisticRegression(C=10**-10) for your learner
-            model = LogisticRegression(C=10**-10)
+            model = LogisticRegression(C=10**-15)
             model.fit(X_train, y_train)
             test_accuracies[i] = model.score(X_test, y_test)
 

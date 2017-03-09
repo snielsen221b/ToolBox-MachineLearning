@@ -1,0 +1,15 @@
+1. General trend of the curve?
+Although the accuracy oscillates, the curve gets more accurate as more of the
+data are used to train it.
+
+2. Parts of the curve noisier?
+Around 20-40% the curve is noisiest, likely because there is less data to train
+with so it is more likely that the model will overestimate or underestimate and
+usually by more.
+
+3. How many trials does it take to get a smooth curve?
+the curve gets smoother around 100 trial but doesn't get much smoother with
+increased trials after that
+
+4. What happens when you change the C value?
+The accuracy increases faster when the C value is smaller
